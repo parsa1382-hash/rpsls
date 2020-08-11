@@ -9,6 +9,7 @@ def main():
         win.append([i,(i+3)%5])
         # [i,j] mean <i> win <j>
 
+        
     #make a class to define a player & play objects
     class player:
         def __init__(self):
@@ -19,6 +20,8 @@ def main():
             self.wingame += 1
         def play(self):
             return random.choice(self.moves)
+        
+        
     def game(a,b):
         p=[a.play(),b.play()]
         if p[0]==p[1]:
@@ -27,11 +30,16 @@ def main():
             a.win()
         else:
             b.win()
-
+            
+            
+    #creat two player
     a=player()
     b=player()
+    
+    #make a game between they
     for i in range(100):
         game(a,b)
+       
     print("a wins: {}\nb wins: {}".format(a.wingame,b.wingame))
 
 if __name__=='__main__':
