@@ -31,7 +31,7 @@ def main():
         p=[a.play(),b.play()]
         if p[0]==p[1]:
             pass 
-        elif p in win:
+        elif p in a.win_matrix:
             a.win()
         else:
             b.win()
