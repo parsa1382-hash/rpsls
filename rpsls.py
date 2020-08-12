@@ -1,7 +1,7 @@
 import random
 
 def main():
-
+#________________________________________________________________________________________
     #make a class to define a player & play objects
     class Player:
 
@@ -19,18 +19,18 @@ def main():
         def play(self):
             return random.choice(self.moves)
 
-
+#_________________________________________________
     class Rpsls_Player(player):
-
         def __init__(self):
             player.__init__(self)
             
             #make a matrix of win & lose graph
             self.win_matrix = [[0, 1], [0, 3], [1, 2], [1, 4], [2, 3]
                             , [2, 0], [3, 4], [3, 1], [4, 0], [4, 2]]
-            #[0,1,2,3,4,] mean --> [Rock, Paper, Scissors, Lizard, Spock]
+                     #[0,1,2,3,4,] mean --> [Rock, Paper, Scissors, Lizard, Spock]
+                     #[i,j] mean <i> win <j>
 
-
+#___________________________________________________________________________________________
 
 
     def game(a,b):
@@ -40,11 +40,14 @@ def main():
 
         elif p in a.win_matrix:
             a.win()
+
         else:
             b.win()
 
 
-#normal game
+#______________________________________________________________________________________
+
+    #normal game
     a = Player()
     b = Player()
 
@@ -52,10 +55,9 @@ def main():
         if (a.wingame == 100) or (b.wingame == 100):
             break
         game(a,b)
-    print("normal game:\na wins: {}\nb wins: {}".format(a.wingame,b.wingame))
-    print("\n\n")
+    print("normal game:\na wins: {}\nb wins: {}\n\n".format(a.wingame,b.wingame))
 
-
+#_____________________________________________
     #rpsls game
     a2=Rpsls_Player()
     b2=Rpsls_player()
